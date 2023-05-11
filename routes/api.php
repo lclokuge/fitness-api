@@ -30,7 +30,7 @@ Route::post('user/deleteUser/{id}', [UserController::class,'deleteUser']);
 
 Route::get('activity/getAllUserActivities', [UserActivitiesController::class,'getAllUserActivities']);
 Route::post('activity/create', [UserActivitiesController::class,'create']);
-Route::get('activity/getActivitiesByuser/{id}', [UserActivitiesController::class,'getActivitiesByuser']);
+Route::get('activity/getActivitiesByid/{id}', [UserActivitiesController::class,'getActivitiesByid']);
 
 Route::post('activity/updateUserActivity/{id}', [UserActivitiesController::class, 'updateUserActivity']);
 Route::post('activity/deleteUserActivity/{id}', [UserActivitiesController::class,'deleteUserActivity']);

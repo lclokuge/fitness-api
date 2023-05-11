@@ -31,7 +31,7 @@ class UserActivitiesController extends Controller
       }
 
      
-      public function getActivitiesByuser($id) {
+      public function getActivitiesByid($id) {
         if (user_activity::where('id', $id)->exists()) {
             $useract = user_activity::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
             return response($useract, 200);
