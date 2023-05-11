@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 use App\Models\user_activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserActivitiesController extends Controller
 {
     public function getAllUserActivities() {
-        return user_activity::all();
+       // return user_activity::all();
+       $useractivity= DB::table('user_activities')
+
+       ->select('user_activities.id','user_activities.date','user_activities.duration',
+       'user_activities.calories','user_activities.distance','user_activities.note',
+       'user_activities.user_id','user_activities.activity_id','users.user_name','activities.activity_name')
+
+       ->join('users','users.id','=','user_activities.user_id')
+       ->join('activities','activities.activity_id','=','user_activities.activity_id')
+
+        ->get();
+
+        return $useractivity;
           
     }
 
