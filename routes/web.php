@@ -22,3 +22,4 @@ Route::get('/', function () {
 //Route::post('/user/create', [UserController::class, 'create']);
 //Route::get('/user/getUser/{id}', [UserController::class, 'getUser']);
 //Route::post('user/updateUser/{id}', [UserController::class, 'updateUser']);
+//Route::post('system/login', [sysuserController::class,'login']);

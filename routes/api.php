@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserActivitiesController;
+use App\Http\Controllers\sysuserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,3 +35,4 @@ Route::get('activity/getActivitiesByid/{id}', [UserActivitiesController::class,'
 
 Route::post('activity/updateUserActivity/{id}', [UserActivitiesController::class, 'updateUserActivity']);
 Route::post('activity/deleteUserActivity/{id}', [UserActivitiesController::class,'deleteUserActivity']);
+Route::post('system/login', [sysuserController::class,'login']);

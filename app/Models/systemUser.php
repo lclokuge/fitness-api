@@ -4,10 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
 
-class systemUser extends Model
+class systemUser extends Authenticatable implements JWTSubject
 {
-    protected $table = 'systemUser';
+    protected $table = 'system_users';
 
     protected $fillable = ['username', 'password'];
 
