@@ -25,7 +25,7 @@ class UserController extends Controller
             $user->save();
     
             return response()->json([
-                "message" => "user is created"
+                " message" => "user is created"
             ], 201);
     
           }
@@ -35,8 +35,11 @@ class UserController extends Controller
                 $user = users::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
                 return response($user, 200);
               } else {
+
                 return response()->json([
-                  "message" => "user not found"
+
+                  "error message" => "user not found"
+
                 ], 404);
               }
           }  
@@ -56,11 +59,13 @@ class UserController extends Controller
                 $user->save();
         
                 return response()->json([
-                    "message" => "records updated successfully"
+
+                    " message" => "users updated successfully"
+
                 ], 200);
                 } else {
                 return response()->json([
-                    "message" => "users not found"
+                    "error message" => "users not found"
                 ], 404);
                 
             }
@@ -73,11 +78,15 @@ class UserController extends Controller
               $user->delete();
       
               return response()->json([
-                "message" => "records deleted"
+
+                " message" => "User deleted"
+
               ], 202);
             } else {
               return response()->json([
-                "message" => "User not found."
+
+                "error message" => "User not found."
+
               ], 404);
             }
           }

@@ -38,7 +38,8 @@ class UserActivitiesController extends Controller
         $useract->save();
 
         return response()->json([
-            "message" => "user is created"
+
+            " message" => "user activity is created"
         ], 201);
 
       }
@@ -49,8 +50,10 @@ class UserActivitiesController extends Controller
             $useract = user_activity::where('id', $id)->get()->toJson(JSON_PRETTY_PRINT);
             return response($useract, 200);
           } else {
+
             return response()->json([
-              "message" => "user not found"
+
+              "error message" => "user activity not found"
             ], 404);
           }
       }   
@@ -69,11 +72,13 @@ class UserActivitiesController extends Controller
             $useract->save();
     
             return response()->json([
-                "message" => "record updated successfully"
+
+                " message" => "user activity updated successfully"
             ], 200);
             } else {
             return response()->json([
-                "message" => "record not found"
+
+                "error message" => "user activity not found"
             ], 404);
             
         }
@@ -86,11 +91,15 @@ class UserActivitiesController extends Controller
           $user->delete();
   
           return response()->json([
-            "message" => "records deleted"
+
+            " message" => "user activity deleted"
+
           ], 202);
         } else {
           return response()->json([
-            "message" => "User not found"
+
+            "error message" => "user activity not found"
+
           ], 404);
         }
       }
